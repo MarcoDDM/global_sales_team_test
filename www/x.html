@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="Global Sales Team">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+    <link rel="shortcut icon" href="https://www.globalsalesteam.net/assets/images/logo2.png" type="image/x-icon">
+    <meta name="description" content="">
+    <title>Global Sales Team</title>
+    <link rel="stylesheet" href="assets/web/assets/gst-icons/mobirise-icons.css">
+    <link rel="stylesheet" href="assets/tether/tether.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="assets/socicon/css/styles.css">
+    <link rel="stylesheet" href="assets/dropdown/css/style.css">
+    <link rel="stylesheet" href="assets/theme/css/style.css">
+    <link rel="stylesheet" href="assets/gst/css/mbr-additional.css" type="text/css">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://www.globalsalesteam.net/style.less" class="cid-rfTy5wOC2M" id="menu1-1" data-rv-view="89">
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+		<script>
+			function getParametro_url(name, url) {
+				if (!url) url = window.location.href;
+				name = name.replace(/[\[\]]/g, '\\$&');
+				var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+						results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, ' '));
+			}
+			col= (getParametro_url("l")||"0").replace(/\r+/g,''); //A: si nos pasaron un texto lo usamos
+
+			async function llenarTexto() {
+				kv= await fetch("https://script.google.com/macros/s/AKfycbwdTmnT9UyD4FN3ahW7-TA_fp093QX28uWkHTAfXxQveoHsIro-/exec").then( res => { return res.json() } );
+				//A: traje el texto de la hoja
+				console.log("KV",JSON.stringify(kv,null,1));
+				var k;
+				for (k in kv) { if (k.length>0) {
+					var e= document.querySelectorAll("[gstdata='"+k.replace(/[^A-Z0-9 ()_-]/gi,"")+"']");
+					for (var i=0; i<e.length; i++) { e[i].innerHTML= kv[k][col]; }
+				}}
+			}
+			//llenarTexto();
+
+			async function traerPlantilla() {
+				plantilla= await fetch("plantilla.html").then( res => { return res.text() } );
+				document.body.innerHTML= plantilla;	
+			}
+		</script>
+</head>
+<body>
+</body>
+
+</html>
