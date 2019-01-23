@@ -415,7 +415,7 @@
 				//A: traje el texto de la hoja
 
 				let kv= {};
-				tsv.split(/\r?\n/g).map( l => { let c= l.split(/\t/g); kv[c[0].replace(/[^A-Z0-9-_ ]/g,"")]= c.slice(1); } );
+				tsv.split(/\r?\n/g).map( l => { let c= l.split(/\t/g); kv[c[0].replace(/[^A-Z0-9 -_]/gi,"")]= c.slice(1); } );
 				console.log("KV",kv);
 				var k;
 				for (k in kv) { if (k.length>0) {
