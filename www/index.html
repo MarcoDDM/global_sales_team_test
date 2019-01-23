@@ -407,7 +407,16 @@
 
 		<script>
 
-			var col= (getParametro_url("l")||"0").replace(/\r+/g,''); //A: si nos pasaron un texto lo usamos
+			function getParametro_url(name, url) {
+				if (!url) url = window.location.href;
+				name = name.replace(/[\[\]]/g, '\\$&');
+				var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+						results = regex.exec(url);
+				if (!results) return null;
+				if (!results[2]) return '';
+				return decodeURIComponent(results[2].replace(/\+/g, ' '));
+			}
+			col= (getParametro_url("l")||"0").replace(/\r+/g,''); //A: si nos pasaron un texto lo usamos
 
 			async function llenarTexto() {
 				kv= await fetch("https://script.google.com/macros/s/AKfycbwdTmnT9UyD4FN3ahW7-TA_fp093QX28uWkHTAfXxQveoHsIro-/exec").then( res => { return res.json() } );
