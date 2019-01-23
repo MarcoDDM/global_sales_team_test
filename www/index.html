@@ -37,7 +37,7 @@
             <div class="menu-logo">
                 <div class="navbar-brand">
 
-                    <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="https://www.globalsalesteam.net/" gstdata="Tu Marca">
+                    <span class="navbar-caption-wrap"><a class="navbar-caption text-white display-4" href="https://www.globalsalesteam.net/" gstdata="Tu marca">
                         GLOBAL SALES TEAM</a></span>
                 </div>
             </div>
@@ -336,7 +336,7 @@
             <div class="media-container-row">
                 <div class="title col-12 col-md-8">
                     <h2 class="align-center mbr-bold mbr-white pb-3 mbr-fonts-style display-1">CONTACTO</h2>
-                    <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5">Escribinos a misitio@globalsalesteam.net</h3>
+                    <h3 class="mbr-section-subtitle align-center mbr-light mbr-white pb-3 mbr-fonts-style display-5">Escribinos a <a href="misitio@globalsalesteam.net" gstdata="Tu mail de contacto">misitio@globalsalesteam.net</a></h3>
 
 
                 </div>
@@ -372,8 +372,8 @@
                     <h5 class="pb-3">Contactanos</h5>
                     <p class="mbr-text"><strong>Gracias por visitar nuestro sitio! 
                     <br></strong><a href="https://www.linkedin.com/company/global-sales-team ">Linkedin</a>
-                    <br>Email us: <a href="https://www.globalsalesteam.net/index.html">misitio@globalsalesteam.net&nbsp;</a></p>
-                    <p>©2019 GlobalSalesTeam</p>
+                    <br>Email us: <a href="mailto:misitio@globalsalesteam.net" gstdata="Tu mail de contacto">misitio@globalsalesteam.net</a></p>
+                    <p>©2019 <span gstdata="Tu marca">GlobalSalesTeam</span></p>
                 </div>
                 <div class="col-12 col-md-3 mbr-fonts-style display-7">
                     <h5 class="pb-3">&nbsp;</h5>
@@ -412,7 +412,7 @@
 				console.log("KV",JSON.stringify(kv,null,1));
 				var k;
 				for (k in kv) { if (k.length>0) {
-					var e= document.querySelectorAll("[gstdata='"+k.replace(/[^A-Z0-9 ()-_]/gi,"")+"']");
+					var e= document.querySelectorAll("[gstdata='"+k.replace(/[^A-Z0-9 ()_-]/gi,"")+"']");
 					for (var i=0; i<e.length; i++) { e[i].innerHTML= kv[k][1]; }
 				}}
 			}
