@@ -406,6 +406,9 @@
     <script src="assets/slidervideo/script.js"></script>
 
 		<script>
+
+			var col= (getParametro_url("l")||"0").replace(/\r+/g,''); //A: si nos pasaron un texto lo usamos
+
 			async function llenarTexto() {
 				kv= await fetch("https://script.google.com/macros/s/AKfycbwdTmnT9UyD4FN3ahW7-TA_fp093QX28uWkHTAfXxQveoHsIro-/exec").then( res => { return res.json() } );
 				//A: traje el texto de la hoja
@@ -413,7 +416,7 @@
 				var k;
 				for (k in kv) { if (k.length>0) {
 					var e= document.querySelectorAll("[gstdata='"+k.replace(/[^A-Z0-9 ()_-]/gi,"")+"']");
-					for (var i=0; i<e.length; i++) { e[i].innerHTML= kv[k][1]; }
+					for (var i=0; i<e.length; i++) { e[i].innerHTML= kv[k][col]; }
 				}}
 			}
 			llenarTexto();
