@@ -194,6 +194,9 @@ figure[mbr-media-size] {
 	padding: 2rem 1rem 1rem 1rem;
 	min-height: 11em; }
 
+.item-role {
+	min-height: 3rem; }
+
 .media {
   max-width: 100%;
   margin: 0 auto; }
