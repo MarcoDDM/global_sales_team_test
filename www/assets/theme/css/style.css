@@ -190,6 +190,10 @@ figure[mbr-media-size] {
   flex-shrink: 0;
   -webkit-flex-shrink: 0; }
 
+.card-box {
+	padding: 2rem 1rem 1rem 1rem;
+	min-height: 11em; }
+
 .media {
   max-width: 100%;
   margin: 0 auto; }
@@ -453,6 +457,9 @@ nav .mbr-section-btn {
 
 .card-wrapper {
   -webkit-flex: 1; }
+
+.carousel {
+	background-color: #333; }
 
 .carousel-control {
   z-index: 10;
