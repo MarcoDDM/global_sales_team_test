@@ -192,7 +192,7 @@ figure[mbr-media-size] {
 
 .card-box {
 	padding: 2rem 1rem 1rem 1rem;
-	min-height: 11em; }
+	min-height: 14em; } /* que todas las tarjetitas queden mismo alto, OjO cant palabras */
 
 .item-role {
 	min-height: 3rem; }
